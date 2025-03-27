@@ -1,0 +1,85 @@
+<div class="signup-container">
+    <img
+      src="C:\Users\I11-23\Downloads\4001_DevOps-20250306T081306Z-001-20250324T045425Z-001\4001_DevOps-20250306T081306Z-001\4001_DevOps\demo\src\main\resources\assets\bg_img.jpg"
+      class="background-image"
+      alt="Background"
+    />
+    <div class="form-wrapper">
+      <div class="image-container">
+        <img
+          src="C:\Users\I11-23\Downloads\4001_DevOps-20250306T081306Z-001-20250324T045425Z-001\4001_DevOps-20250306T081306Z-001\4001_DevOps\demo\src\main\resources\assets\left_img.jpg"
+          class="feature-image"
+          alt="Feature"
+        />
+      </div>
+      <form
+        x-data="{
+          formData: {
+            fullName: '',
+            email: '',
+            password: ''
+          },
+          isHovering: false,
+          submitForm() {
+            if (!this.formData.fullName || !this.formData.email || !this.formData.password) {
+              return;
+            }
+          }
+        }"
+        class="signup-form"
+      >
+        <header class="form-header">
+          <h1 class="brand-title">SwapShelf</h1>
+        </header>
+        <div class="form-fields">
+          <div class="input-group">
+            <input
+              x-model="formData.fullName"
+              type="text"
+              placeholder="Full Name"
+              class="form-input"
+            />
+          </div>
+          <div class="input-group">
+            <input
+              x-model="formData.email"
+              type="email"
+              placeholder="Email"
+              class="form-input"
+            />
+          </div>
+          <div class="input-group">
+            <input
+              x-model="formData.password"
+              type="password"
+              placeholder="Password"
+              class="form-input"
+            />
+          </div>
+          <button
+            type="submit"
+            x-on:mouseenter="isHovering = true"
+            x-on:mouseleave="isHovering = false"
+            x-on:click="submitForm()"
+            x-bind:style="{
+              transform: isHovering ? 'scale(1.02)' : 'scale(1)',
+              background: isHovering ? '#333' : '#000'
+            }"
+            class="submit-button"
+          >
+            Sign Up
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <script
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    defer
+  ></script>
+  <link
+    href="first.css"
+    rel="stylesheet"
+  />
+  
